@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - ReferEarn</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-card wide animate-slide-up">
+            <div class="auth-header">
+                <i class="fas fa-user-plus"></i>
+                <h2>Create Account</h2>
+                <p>Start earning today</p>
+            </div>
+            
+            <form id="signupForm" class="auth-form">
+                <div class="form-row">
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="fullName" placeholder="Full Name" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <i class="fas fa-flag"></i>
+                        <select id="countryCode" required>
+                            <option value="+250">Rwanda (+250)</option>
+                            <option value="+256">Uganda (+256)</option>
+                            <option value="+254">Kenya (+254)</option>
+                            <option value="+255">Tanzania (+255)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" id="phoneNumber" placeholder="Phone Number" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="input-group">
+                        <i class="fas fa-calendar"></i>
+                        <input type="date" id="dateOfBirth" placeholder="Date of Birth">
+                    </div>
+                    
+                    <div class="input-group">
+                        <i class="fas fa-id-card"></i>
+                        <input type="text" id="nationalId" placeholder="National ID (Optional)">
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-gift"></i>
+                    <select id="referralPackage" required>
+                        <option value="">Select Package</option>
+                        <option value="1">Basic Package - 1,000 FRW</option>
+                        <option value="2">Pro Package - 2,000 FRW</option>
+                        <option value="3">Premium Package - 3,500 FRW</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-code"></i>
+                    <input type="text" id="referralCode" placeholder="Referral Code (Optional)">
+                </div>
+                
+                <button type="submit" class="btn-submit">
+                    <i class="fas fa-user-plus"></i>
+                    Sign Up
+                </button>
+            </form>
+            
+            <div class="auth-footer">
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/auth.js"></script>
+</body>
+</html>

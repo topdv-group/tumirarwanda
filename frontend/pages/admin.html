@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - ReferEarn</title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="admin-container">
+        <nav class="admin-sidebar">
+            <div class="admin-logo">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Admin Panel</h3>
+            </div>
+            <ul class="admin-menu">
+                <li class="active" data-tab="dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </li>
+                <li data-tab="users">
+                    <i class="fas fa-users"></i>
+                    <span>Users</span>
+                </li>
+                <li data-tab="pending-users">
+                    <i class="fas fa-clock"></i>
+                    <span>Pending Activation</span>
+                </li>
+                <li data-tab="withdrawals">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span>Withdrawal Requests</span>
+                </li>
+                <li data-tab="transactions">
+                    <i class="fas fa-list"></i>
+                    <span>All Transactions</span>
+                </li>
+                <li id="adminLogout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </li>
+            </ul>
+        </nav>
+        
+        <main class="admin-content">
+            <!-- Dashboard Tab -->
+            <div id="dashboardTab" class="admin-tab active">
+                <h1>Admin Dashboard</h1>
+                <div class="stats-grid" id="adminStats">
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Total Users</h3>
+                        <div class="stat-number" id="totalUsers">-</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-user-check"></i>
+                        <h3>Active Users</h3>
+                        <div class="stat-number" id="activeUsers">-</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-hourglass-half"></i>
+                        <h3>Pending Withdrawals</h3>
+                        <div class="stat-number" id="pendingWithdrawals">-</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Total Earnings</h3>
+                        <div class="stat-number" id="totalEarnings">-</div>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="adminChart"></canvas>
+                </div>
+            </div>
+            
+            <!-- Users Tab -->
+            <div id="usersTab" class="admin-tab">
+                <h1>All Users</h1>
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Balance</th>
+                                <th>Referrals</th>
+                                <th>Status</th>
+                                <th>Joined</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usersList">
+                            <tr><td colspan="6">Loading users...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Pending Users Tab -->
+            <div id="pendingUsersTab" class="admin-tab">
+                <h1>Pending User Activation</h1>
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Package</th>
+                                <th>Referral Code</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="pendingUsersList">
+                            <tr><td colspan="5">No pending users</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Withdrawals Tab -->
+            <div id="withdrawalsTab" class="admin-tab">
+                <h1>Withdrawal Requests</h1>
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Phone</th>
+                                <th>Amount</th>
+                                <th>Requested</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="withdrawalsList">
+                            <tr><td colspan="5">No pending withdrawals</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Transactions Tab -->
+            <div id="transactionsTab" class="admin-tab">
+                <h1>All Transactions</h1>
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Type</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="allTransactionsList">
+                            <tr><td colspan="5">Loading transactions...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="../js/admin.js"></script>
+</body>
+</html>
